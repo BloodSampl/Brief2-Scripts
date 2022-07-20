@@ -35,6 +35,7 @@ public class FightManager : MonoBehaviour
         if(playerOnePowerLevel > playerTwoPowerLevel)
         {
             string battleMessage = teamACharacter.charName.GetFullCharacterName() + " " + teamBCharacter.charName.GetFullCharacterName() + " Player one wins";
+            teamBCharacter.myStatsSystem.ChangeHealth(5);
             BattleLog.Log(battleMessage, drawCol);
             BattleLog.Log("team A Wins", teamAColour);
             BattleLog.Log("team B Lost", teamBColour);
@@ -44,6 +45,7 @@ public class FightManager : MonoBehaviour
         else if (playerTwoPowerLevel > playerOnePowerLevel)
         {
             string battleMessage = teamACharacter.charName.GetFullCharacterName() + " " + teamBCharacter.charName.GetFullCharacterName() + " Player two wins";
+            teamACharacter.myStatsSystem.ChangeHealth(5);
             BattleLog.Log(battleMessage, drawCol);
             BattleLog.Log("team A Lost", teamAColour);
             BattleLog.Log("team B Wins", teamBColour);
